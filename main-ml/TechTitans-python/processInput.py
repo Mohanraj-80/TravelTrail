@@ -5,7 +5,7 @@ class Process:
     def __init__(self) :
 
         self.fromThem = ["BusinessAcceptsCreditCards" , "BikeParking" , "RestaurantsTakeOut","WiFi" ,"GoodForKids" , "RestaurantsAttire" , "RestaurantsGoodForGroups" ,"garage", "street", "lot","valet" ]
-        self.buisness = pd.read_csv("processed_hotels.csv")
+        self.buisness = pd.read_csv("../processed_hotels.csv")
         self.prioriy = ["State" , "City", "RestaurantsGoodForGroups" , "BikeParking" , "BusinessAcceptsCreditCards" , "WiFi" ,"street", "lot"  , "garage","RestaurantsAttire" , "GoodForKids" ,"valet","RestaurantsTakeOut"]
         self.fromMe = ['business_id' , 'name','State','address', 'postal_code', 'City', 'Open24Hours', 'ByAppointmentOnly', 'BusinessAcceptsCreditCards', 'BikeParking', 'RestaurantsTakeOut', 'WiFi','Alcohol','GoodForKids','RestaurantsAttire','RestaurantsGoodForGroups','garage','street','lot','valet',"hours","categories"]
         self.default_State = "Pennsylvania" 
