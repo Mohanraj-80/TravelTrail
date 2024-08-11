@@ -1,6 +1,10 @@
 import { Link } from 'react-router-dom';
 
 function Signup() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <div className="signup-container" id="login">
       <div className="login-box">

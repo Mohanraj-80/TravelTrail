@@ -34,7 +34,7 @@ mongoose.connect("mongodb+srv://saranz:Saran%405187473@cluster0.6di5z1z.mongodb.
   });
   const planSchema = new mongoose.Schema({
     title : String,
-    todos : object 
+    todos : String 
   })
   const User = mongoose.model("User", userSchema);
   const Plan = mongoose.model("plan", planSchema) 

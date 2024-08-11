@@ -1,14 +1,21 @@
-import React, { useState } from 'react'
+import PropTypes from 'prop-types';
 
-const DatePicker = () => {
-    const [date,setDate] = useState()
-  return (
-    <>
-     <div>
-        <input type="date" className='input-date' onChange={(e)=>setDate(e.target.value)} />
-    </div>
-    </>
-  )
-}
+const DatePicker = ({ setDate, dateType }) => {
+    return (
+        <div>
+            <input 
+                type="date" 
+                className='input-date' 
+                onChange={(e) => setDate(e.target.value)} 
+            />
+        </div>
+    );
+};
 
-export default DatePicker
+// Define prop types for validation
+DatePicker.propTypes = {
+    setDate: PropTypes.func.isRequired,
+    dateType: PropTypes.string.isRequired
+};
+
+export default DatePicker;

@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import  { useState,  } from 'react';
+import PropTypes from 'prop-types';
 
-const Hotel = () => {
+const Hotel = ({ setHotelPreferences }) => {
     const [checkboxes, setCheckboxes] = useState({
         creditcard: false,
         bikeParking: false,
@@ -17,15 +18,13 @@ const Hotel = () => {
 
     const handleCheckboxChange = (event) => {
         const { id, checked } = event.target;
-        setCheckboxes((prevCheckboxes) => ({
-            ...prevCheckboxes,
-            [id]: checked,
-        }));
+        setCheckboxes((prevCheckboxes) => {
+            const updatedCheckboxes = { ...prevCheckboxes, [id]: checked };
+            setHotelPreferences(updatedCheckboxes);
+            return updatedCheckboxes;
+        });
     };
-
-    useEffect(() => {
-        console.log(checkboxes);
-    }, [checkboxes]);
+    
 
     const checkboxLabels = {
         creditcard: "Business accepts credit cards",
@@ -81,6 +80,11 @@ const Hotel = () => {
             </div>
         </>
     );
+};
+
+// Define prop types for validation
+Hotel.propTypes = {
+    setHotelPreferences: PropTypes.func.isRequired
 };
 
 export default Hotel;
