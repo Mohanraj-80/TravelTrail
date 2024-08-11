@@ -46,12 +46,11 @@ class Generate:
     def getOutput(self , start , destination  ,modeOfTransport="flight" , numberOfDays=3   ):
 
 
-        query = f"I want to travel from {start} to {destination} for  {numberOfDays} days_count   give me a me a tour and cost of travel via flight. please be ralistic as much as possibe . if start and end are not seem to be like valid names return invalid generate the content in the format like this format : {self.format}"
-
+        query = f"I want to travel from {start} to {destination} for  {numberOfDays} days_count  give me a me a tour and cost of travel via flight. please be ralistic as much as possibe . if start and end are not seem to be like valid names return invalid generate the content in the format like this format : {self.format} please dont forget to put commas in json arrays(dont forget to put commas)"
         self.text = self.model.generate_content(query).text
 
         try:
-            op = self.text.lower()
+            op = self.text.lower()  
             st = re.search("\{\s*\"day\s*-*1",op)
             end = re.search("]\s*}",op)
             print(f"sttt = {st}")
